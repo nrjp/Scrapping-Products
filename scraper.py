@@ -23,11 +23,11 @@ def google_shop(product):
         price = item.select_one(".HRLxBb").text.strip()
         product_link = item.select_one("a")["href"]   
 
-    product_list.append({
-    'Product name': name,
-    'price': price,
-    'product_link': product_link
-    })
+        product_list.append({
+        'Product name': name,
+        'price': price,
+        'product_link': product_link
+        })
     with open('data.json', 'w',encoding='utf-8') as f:
         json.dump(product_list, f,ensure_ascii=False)
     print('done')
