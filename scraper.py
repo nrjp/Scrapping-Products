@@ -30,8 +30,13 @@ def google_shop(product):
         })
     with open('data.json', 'w',encoding='utf-8') as f:
         json.dump(product_list, f,ensure_ascii=False)
-    print('done')
     return product_list
 
 
-google_shop('mobile')
+def get_by_item(product,id):
+   google_shop(product)
+   with open('data.json') as json_data:
+    data = json.load(json_data)
+    print(data[id])
+    return data[id]
+   
